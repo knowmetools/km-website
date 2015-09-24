@@ -1,0 +1,24 @@
+{
+  "name": "km-website",
+  "version": "0.0.0",
+  "description": "Website for KnowMe. Initially just a landing page, but will be expanded upon as products are developed",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smalls12/km-website.git"
+  },
+  "keywords": [
+    "knowme"
+  ],
+  "author": "Chathan Driehuys",
+  "license": "GNU-GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/smalls12/km-website/issues"
+  },
+  "devDependencies": {
+    "gulp": "~3.9.0"
+  }
+}
