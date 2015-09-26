@@ -26,7 +26,7 @@ gulp.task('sass', function() {
 			suffix: '.min'
 		}))
 		.pipe(gulp.dest('./public_html/css'))
-		.pipe(browser_sync.stream());
+		.pipe(browser_sync.stream({once: true}));
 });
 
 // tasks that need browser sync reloads after completing
