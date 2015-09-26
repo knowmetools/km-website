@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 
+var autoprefixer = require('gulp-autoprefixer');
 var browser_sync = require('browser-sync').create();
 var min_css = require('gulp-minify-css');
 var rename = require('gulp-rename');
@@ -15,6 +16,10 @@ gulp.task('html', function() {
 gulp.task('sass', function() {
 	return gulp.src('./src/sass/**/*.scss')
 		.pipe(sass().on('error', sass.logError))
+		.pipe(autoprefixer({
+			browsers: ['> 5%'],
+			cascade: true
+		}))
 		.pipe(gulp.dest('./public_html/css'))
 		.pipe(min_css())
 		.pipe(rename({

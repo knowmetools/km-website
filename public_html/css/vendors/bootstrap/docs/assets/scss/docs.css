@@ -47,6 +47,7 @@
   color: #cdbfe3;
   text-align: center;
   background: -webkit-linear-gradient(135deg, #271b38, #563d7c, #7952b3);
+  background: -webkit-linear-gradient(315deg, #271b38, #563d7c, #7952b3);
   background: linear-gradient(135deg, #271b38, #563d7c, #7952b3); }
   .bd-masthead .bd-booticon {
     margin: 0 auto 2rem;
@@ -1137,7 +1138,6 @@
 *:hover > .anchorjs-link {
   opacity: .75;
   -webkit-transition: color 0.16s linear;
-  -o-transition: color 0.16s linear;
   transition: color 0.16s linear; }
 
 *:hover > .anchorjs-link:hover,
