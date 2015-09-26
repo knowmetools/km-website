@@ -19,6 +19,9 @@
     "url": "https://github.com/smalls12/km-website/issues"
   },
   "devDependencies": {
-    "gulp": "~3.9.0"
+    "gulp": "~3.9.0",
+    "gulp-sass": "~2.0.4",
+    "gulp-minify-css": "~1.2.1",
+    "gulp-rename": "~1.2.2"
   }
 }
