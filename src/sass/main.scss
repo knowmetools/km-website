@@ -5,3 +5,11 @@
 		float: right;
 	}
 }
+
+.navbar-brand {
+	max-height: 2em;
+
+	img {
+		max-height: inherit;
+	}
+}

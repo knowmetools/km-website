@@ -4722,3 +4722,8 @@ a.bg-danger:hover {
 @media (min-width: 48em) {
   .nav.nav-pills {
     float: right; } }
+
+.navbar-brand {
+  max-height: 2em; }
+  .navbar-brand img {
+    max-height: inherit; }
