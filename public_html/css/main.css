@@ -4718,3 +4718,7 @@ a.bg-danger:hover {
 @media print {
   .hidden-print .hidden-print {
     display: none !important; } }
+
+@media (min-width: 48em) {
+  .nav.nav-pills {
+    float: right; } }
