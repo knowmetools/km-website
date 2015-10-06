@@ -1369,6 +1369,9 @@ pre {
   .form-control::-webkit-input-placeholder {
     color: #999;
     opacity: 1; }
+  .form-control::-moz-placeholder {
+    color: #999;
+    opacity: 1; }
   .form-control:-ms-input-placeholder {
     color: #999;
     opacity: 1; }
@@ -1647,6 +1650,7 @@ fieldset[disabled] .checkbox label {
   touch-action: manipulation;
   cursor: pointer;
   -webkit-user-select: none;
+     -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   border: 0.0625rem solid transparent;
@@ -2538,6 +2542,7 @@ input[type="button"].btn-block {
   color: #eee;
   text-align: center;
   -webkit-user-select: none;
+     -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   background-color: #eee;
@@ -2579,6 +2584,7 @@ input[type="button"].btn-block {
   background-size: 8px 10px;
   border: 1px solid #ccc;
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   padding-right: .75rem \9;
   background-image: none \9; }
@@ -2620,6 +2626,7 @@ input[type="button"].btn-block {
   line-height: 1.5;
   color: #555;
   -webkit-user-select: none;
+     -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   background-color: #fff;
@@ -2784,7 +2791,6 @@ input[type="button"].btn-block {
   bottom: 0; }
 
 .navbar-sticky-top {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1030;
@@ -3052,8 +3058,10 @@ input[type="button"].btn-block {
 
 .card-columns {
   -webkit-column-count: 3;
+     -moz-column-count: 3;
           column-count: 3;
   -webkit-column-gap: 1.25rem;
+     -moz-column-gap: 1.25rem;
           column-gap: 1.25rem; }
   .card-columns .card {
     display: inline-block;
@@ -3374,6 +3382,7 @@ a.label:hover {
   color: #0074d9;
   border: 0;
   -webkit-appearance: none;
+     -moz-appearance: none;
           appearance: none; }
 
 .progress[value]::-webkit-progress-bar {
