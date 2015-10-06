@@ -19,7 +19,7 @@
     "url": "https://github.com/smalls12/km-website/issues"
   },
   "devDependencies": {
-    "browser-sync": "~2.9.6",
+    "browser-sync": "~2.9.10",
     "gulp": "~3.9.0",
     "gulp-autoprefixer": "~3.0.2",
     "gulp-minify-css": "~1.2.1",
