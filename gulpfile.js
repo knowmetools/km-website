@@ -29,17 +29,32 @@ gulp.task('sass', function() {
 		.pipe(browser_sync.stream({once: true}));
 });
 
+gulp.task('scripts', function() {
+	return gulp.src('./src/js/*.js')
+		.pipe(gulp.dest('./public_html/js'));
+});
+
+gulp.task('vendor-scripts-copy', function() {
+	return gulp.src('./src/**/vendors/**/*.js')
+		.pipe(rename({
+			dirname: 'vendors'
+		}))
+		.pipe(gulp.dest('./public_html/js'));
+});
+
 // tasks that need browser sync reloads after completing
 gulp.task('html-watch', ['html'], function() {browser_sync.reload();});
+gulp.task('scripts-watch', ['scripts'], function() {browser_sync.reload();});
 
 // watch for changes in files and run the appropriate tasks
 gulp.task('watch', function() {
 	gulp.watch('./src/**/*.html', ['html-watch']);
+	gulp.watch('./src/js/*.js', ['scripts-watch']);
 	gulp.watch('./src/sass/**/*.scss', ['sass']);
 });
 
 // browser sync task that runs all other tasks first.
-gulp.task('browser-sync', ['sass', 'html'], function() {
+gulp.task('browser-sync', ['sass', 'html', 'scripts', 'vendor-scripts-copy'], function() {
 	browser_sync.init({
 		open: false,
 		server: {
