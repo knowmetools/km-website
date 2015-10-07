@@ -7,6 +7,15 @@
 
 .nav.nav-pills {
 	padding-top: .5em;
+
+	a.nav-link {
+		color: white;
+		font-weight: bold;
+
+		&.active {
+			background-color: #FD542D;
+		}
+	}
 }
 
 @include media-breakpoint-up(md) {

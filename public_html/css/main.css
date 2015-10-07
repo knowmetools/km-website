@@ -4725,6 +4725,11 @@ a.bg-danger:hover {
 
 .nav.nav-pills {
   padding-top: .5em; }
+  .nav.nav-pills a.nav-link {
+    color: white;
+    font-weight: bold; }
+    .nav.nav-pills a.nav-link.active {
+      background-color: #FD542D; }
 
 @media (min-width: 48em) {
   .nav.nav-pills {
