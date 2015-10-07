@@ -1,8 +1,13 @@
 @import "vendors/bootstrap/scss/bootstrap";
 
+.nav.nav-pills {
+	padding-top: .5em;
+}
+
 @include media-breakpoint-up(md) {
 	.nav.nav-pills {
 		float: right;
+		padding-top: 0;
 	}
 }
 

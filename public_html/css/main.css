@@ -4719,9 +4719,13 @@ a.bg-danger:hover {
   .hidden-print .hidden-print {
     display: none !important; } }
 
+.nav.nav-pills {
+  padding-top: .5em; }
+
 @media (min-width: 48em) {
   .nav.nav-pills {
-    float: right; } }
+    float: right;
+    padding-top: 0; } }
 
 .navbar-brand {
   max-height: 2em;
