@@ -1,5 +1,10 @@
 @import "vendors/bootstrap/scss/bootstrap";
 
+.navbar-toggler {
+	color: white;
+	padding-top: .75em;
+}
+
 .nav.nav-pills {
 	padding-top: .5em;
 }
@@ -25,4 +30,15 @@
 	.nav-top {
 		margin-top: 2em;
 	}
+}
+
+.hero {
+	background: url('/imgs/ipad.jpg') no-repeat center center;
+	background-size: cover;
+
+	position: absolute;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: -10;
 }
