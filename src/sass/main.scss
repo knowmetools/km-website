@@ -8,8 +8,16 @@
 
 .navbar-brand {
 	max-height: 2em;
+	max-width: 75%;
 
 	img {
 		max-height: inherit;
+	}
+}
+
+
+@include media-breakpoint-up(md) {
+	.nav-top {
+		margin-top: 2em;
 	}
 }
