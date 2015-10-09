@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/* fonts */
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+/* Vendor styles */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
@@ -4718,6 +4721,9 @@ a.bg-danger:hover {
 @media print {
   .hidden-print .hidden-print {
     display: none !important; } }
+
+body {
+  font-family: "Roboto Condensed", sans-serif; }
 
 .navbar-toggler {
   color: white;
