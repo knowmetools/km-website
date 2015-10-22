@@ -12,6 +12,10 @@ main {
 	padding-top: 100vh;
 }
 
+footer {
+	margin-top: 5em;
+}
+
 .navbar-toggler {
 	color: white;
 	padding-top: .75em;
@@ -51,6 +55,11 @@ main {
 	.nav-top {
 		margin-top: 2em;
 	}
+}
+
+.feature-icon {
+	font-size: 6em;
+	color: $brand-primary;
 }
 
 .hero {

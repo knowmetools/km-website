@@ -4728,6 +4728,9 @@ body {
 main {
   padding-top: 100vh; }
 
+footer {
+  margin-top: 5em; }
+
 .navbar-toggler {
   color: white;
   padding-top: .75em; }
@@ -4754,6 +4757,10 @@ main {
 @media (min-width: 48em) {
   .nav-top {
     margin-top: 2em; } }
+
+.feature-icon {
+  font-size: 6em;
+  color: #0275d8; }
 
 .hero {
   background: url("/imgs/screenshot.jpg") no-repeat center center;
