@@ -8,6 +8,10 @@ body {
 	font-family: "Roboto Condensed", sans-serif;
 }
 
+main {
+	padding-top: 100vh;
+}
+
 .navbar-toggler {
 	color: white;
 	padding-top: .75em;
@@ -50,7 +54,7 @@ body {
 }
 
 .hero {
-	background: url('/imgs/ipad.jpg') no-repeat center center;
+	background: url('/imgs/screenshot.jpg') no-repeat center center;
 	background-size: cover;
 
 	position: absolute;
@@ -58,4 +62,8 @@ body {
 	width: 100vw;
 	height: 100vh;
 	z-index: -10;
+}
+
+.legal, .copyright {
+	font-size: .8em;
 }
