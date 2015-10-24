@@ -1,6 +1,2 @@
-# Don't include node modules
-node_modules/
-
-# Don't include sublime project
-*.sublime-project
-*.sublime-workspace
+_site
+.sass-cache
