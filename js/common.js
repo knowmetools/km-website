@@ -12,3 +12,14 @@ $('.navbar-toggler').on('click', function() {
 		}
 	}
 });
+
+$(document).ready(function() {
+	// find header link for current page
+	$el = $("a#" + HEADER_ID);
+	// make it the active link
+	$el.addClass("active");
+
+	// add accessibility items
+	$span = $("<span class='sr-only'>(current)</span>");
+	$el.append($span);
+});
