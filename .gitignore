@@ -1,6 +1,7 @@
-# Don't include node modules
-node_modules/
+# jekyll generated
+_site
+.sass-cache
 
-# Don't include sublime project
+# sublime text files
 *.sublime-project
 *.sublime-workspace
