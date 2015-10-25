@@ -71,6 +71,3 @@ PLATFORMS
 DEPENDENCIES
   jekyll
   octopress-autoprefixer
-
-BUNDLED WITH
-   1.10.6
