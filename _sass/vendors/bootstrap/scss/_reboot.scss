@@ -1,7 +1,7 @@
 // Reboot
 //
 // Global resets to common HTML elements and more for easier usage by Bootstrap.
-// Builds on the resets of Normalize.css.
+// Adds additional rules on top of Normalize.css, including several overrides.
 
 
 // Reset the box-sizing
@@ -15,15 +15,15 @@
 // recommendations on resolving such conflicts, see
 // http://getbootstrap.com/getting-started/#third-box-sizing.
 //
-// Credit: shttp://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+// Credit: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 
 html {
   box-sizing: border-box;
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -146,7 +146,7 @@ blockquote {
 
 a {
   color: $link-color;
-  text-decoration: none;
+  text-decoration: $link-decoration;
 
   @include hover-focus {
     color: $link-hover-color;
@@ -199,7 +199,6 @@ img {
 // Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
 // for traditionally non-focusable elements with role="button"
 // see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
-// Upstream patch for normalize.css submitted: https://github.com/necolas/normalize.css/pull/379 - remove this fix once that is merged
 
 [role="button"] {
   cursor: pointer;
@@ -249,6 +248,8 @@ textarea {
   // properly inherited. However, `line-height` isn't addressed there. Using this
   // ensures we don't need to unnecessarily redeclare the global font stack.
   line-height: inherit;
+  // iOS adds rounded borders by default
+  border-radius: 0;
 }
 
 textarea {
@@ -279,6 +280,8 @@ legend {
 }
 
 input[type="search"] {
+  // Undo Normalize's default here to match our global overrides.
+  box-sizing: inherit;
   // This overrides the extra rounded corners on search inputs in iOS so that our
   // `.form-control` class can properly style them. Note that this cannot simply
   // be added to `.form-control` as it's not specific enough. For details, see

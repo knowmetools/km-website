@@ -21,13 +21,13 @@ Here are our guidelines and reasons for choosing what to override in Reboot:
 - Update some browser default values to use `rem`s instead of `em`s for scalable component spacing.
 - Avoid `margin-top`. Vertical margins can collapse, yielding unexpected results. More importantly though, a single direction of `margin` is a simpler mental model.
 - For easier scaling across device sizes, block elements should use `rem`s for `margin`s.
-- Keep declarations of `font`-related properties to a minimal, using `inherit` whenever possible.
+- Keep declarations of `font`-related properties to a minimum, using `inherit` whenever possible.
 
 ## Page defaults
 
 The `<html>` and `<body>` elements are updated to provide better page-wide defaults. More specifically:
 
-- The `box-sizing` is globally set on every element—including `*:before` and `*after`, to `border-box`. This ensures that the declared width of element is never exceeded due to padding or border.
+- The `box-sizing` is globally set on every element—including `*:before` and `*:after`, to `border-box`. This ensures that the declared width of element is never exceeded due to padding or border.
 - A base `font-size: 16px` is declared on the `<html>` and `font-size: 1rem` on the `<body>` for easy responsive type-scaling via media queryies.
 - The `<body>` also sets a global `font-family` and `line-height`. This is inherited later by some form elements to prevent font inconsistencies.
 - For safety, the `<body>` has a declared `background-color`, defaulting to `#fff`.
@@ -111,7 +111,7 @@ The `<pre>` element is reset to remove its `margin-top` and use `rem` units for 
 <div class="bd-example">
 {% markdown %}
 <pre>
-.element {
+.example-element {
   margin-bottom: 1rem;
 }
 </pre>
@@ -120,7 +120,7 @@ The `<pre>` element is reset to remove its `margin-top` and use `rem` units for 
 
 ## Tables
 
-Tables are slightly adjusted to style `<caption>`s and ensure consistent `text-align` throughout. Additional changes for borders, padding, and more come with [the `.table` class](/components/tables/).
+Tables are slightly adjusted to style `<caption>`s and ensure consistent `text-align` throughout. Additional changes for borders, padding, and more come with [the `.table` class]({{ site.baseurl }}/content/tables/).
 
 <div class="bd-example">
   <table>
@@ -166,7 +166,7 @@ Various form elements have been rebooted for simpler base styles. Here are some 
 - `<legend>`s, like fieldsets, have also been restyled to be displayed as a heading of sorts.
 - `<label>`s are set to `display: inline-block` to allow `margin` to be applied.
 - `<input>`s, `<selects>`s, `<textareas>`s, and `<buttons>`s are mostly addressed by Normalize, but Reboot removes their `margin` and sets `line-height: inherit`, too.
-- `<textarea>`s are modified to only be resizeble vertically as horizontal resizing often "breaks" page layout.
+- `<textarea>`s are modified to only be resizable vertically as horizontal resizing often "breaks" page layout.
 
 These changes, and more, are demonstrated below.
 
@@ -272,7 +272,7 @@ The `<address>` element is updated to reset the browser default `font-style` fro
 The default `margin` on blockquotes is `1em 40px`, so we reset that to `0 0 1rem` for something more consistent with other elements.
 
 <div class="bd-example">
-  <blockquote>
+  <blockquote class="blockquote">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
     <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
   </blockquote>
@@ -280,7 +280,7 @@ The default `margin` on blockquotes is `1em 40px`, so we reset that to `0 0 1rem
 
 ### Inline elements
 
-The `<abbr>` element receives basic styling to make it stand the amongst paragraph text.
+The `<abbr>` element receives basic styling to make it stand out amongst paragraph text.
 
 <div class="bd-example">
   Nulla <abbr title="attribute">attr</abbr> vitae elit libero, a pharetra augue.

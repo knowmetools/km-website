@@ -4,7 +4,7 @@ title: Typography
 group: content
 ---
 
-Bootstrap includes simple and easily customized typography for headings, body text, lists, and more. For even more control, check out the [textual utility classes](/components/utilities/).
+Bootstrap includes simple and easily customized typography for headings, body text, lists, and more. For even more control, check out the [textual utility classes]({{ site.baseurl }}/components/utilities/).
 
 ## Contents
 
@@ -15,11 +15,11 @@ Bootstrap includes simple and easily customized typography for headings, body te
 
 Bootstrap sets basic global display, typography, and link styles. Specifically, we:
 
-- Set `background-color: #fff;` on the `<body>`
-- Use the `@font-family-base`, `@font-size-base`, and `@line-height-base` attributes as our typographic base
-- Set the global link color via `@link-color` and apply link underlines only on `:hover`
+- Use `$body-bg` to set a `background-color` on the `<body>` (`#fff` by default)
+- Use the `$font-family-base`, `$font-size-base`, and `$line-height-base` attributes as our typographic base
+- Set the global link color via `$link-color` and apply link underlines only on `:hover`
 
-These styles can be found within `scaffolding.less`.
+These styles can be found within `_reboot.scss`, and the global variables are defined in `_variables.scss`.
 
 
 ## Headings
@@ -85,20 +85,27 @@ Traditional heading elements are designed to work best in the meat of your page 
   <table class="table">
     <tbody>
       <tr>
-        <td><h1 class="display-4">Display 4</h1></td>
-      </tr>
-      <tr>
-      <td><h1 class="display-3">Display 3</h1></td>
+        <td><h1 class="display-1">Display 1</h1></td>
       </tr>
       <tr>
       <td><h1 class="display-2">Display 2</h1></td>
       </tr>
       <tr>
-      <td><h1 class="display-1">Display 1</h1></td>
+      <td><h1 class="display-3">Display 3</h1></td>
+      </tr>
+      <tr>
+      <td><h1 class="display-4">Display 4</h1></td>
       </tr>
     </tbody>
   </table>
 </div>
+
+{% highlight html %}
+<h1 class="display-1">Display 1</h1>
+<h1 class="display-2">Display 2</h1>
+<h1 class="display-3">Display 3</h1>
+<h1 class="display-4">Display 4</h1>
+{% endhighlight %}
 
 ## Lead
 
@@ -228,3 +235,33 @@ Align terms and descriptions horizontally by using our grid system's predefined 
   <dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
 </dl>
 {% endexample %}
+
+## Responsive typography
+
+*Responsive typography* refers to scaling text and components by simply adjusting the root element's `font-size` within a series of media queries. Bootstrap doesn't do this for you, but it's fairly easy to add if you need it.
+
+Here's an example of it in practice. Choose whatever `font-size`s and media queries you wish.
+
+{% highlight scss %}
+html {
+  font-size: 14px;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 28px;
+  }
+}
+{% endhighlight %}
