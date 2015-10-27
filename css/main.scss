@@ -19,6 +19,10 @@ footer {
 	margin-top: 5em;
 }
 
+.nav-pills .nav-item.open .nav-link, .nav-pills .nav-item.open .nav-link:focus, .nav-pills .nav-item.open .nav-link:hover {
+	background-color: #FD542D;
+}
+
 .navbar {
 	background: rgba(0, 0, 0, .7);
 	border-radius: .5em;
