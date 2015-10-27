@@ -1,5 +1,5 @@
 $('.navbar-toggler').on('click', function() {
-	$el = $($(this).attr('data-target'));
+	var $el = $($(this).attr('data-target'));
 	if (!$el.hasClass('collapsing')) {
 		if ($el.css('display') == 'none') {
 			$el.addClass('nav-stacked');
@@ -15,11 +15,17 @@ $('.navbar-toggler').on('click', function() {
 
 $(document).ready(function() {
 	// find header link for current page
-	$el = $("a#" + HEADER_ID);
+	var $el = $("a#" + HEADER_ID);
 	// make it the active link
 	$el.addClass("active");
 
 	// add accessibility items
-	$span = $("<span class='sr-only'>(current)</span>");
+	var $span = $("<span class='sr-only'>(current)</span>");
 	$el.append($span);
+
+	// if element is a dropdown item, highlight parent button
+	if ($el.hasClass("dropdown-item")) {
+		var $link = $el.parent().parent().find('.dropdown-toggle');
+		$link.addClass("active");
+	}
 });
