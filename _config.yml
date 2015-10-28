@@ -18,3 +18,7 @@ assets:
     - _assets/images
     - _assets/javascript
     - _assets/stylesheets
+
+  # minification
+  js_compressor: uglifier
+  css_compressor: sass
