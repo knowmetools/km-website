@@ -8,10 +8,11 @@
 @import "vendors/bootstrap/scss/bootstrap";
 
 /* Custom modules */
+@import "modules/vars";
 @import "modules/navigation";
 
 body {
-	font-family: "Roboto Condensed", sans-serif;
+	font-family: $font-stack;
 }
 
 main {

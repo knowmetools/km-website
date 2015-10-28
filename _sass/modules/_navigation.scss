@@ -14,9 +14,9 @@
 }
 
 .navbar {
-	background: rgba(0, 0, 0, .7);
+	background: $navbar-background;
 	border-radius: .5em;
-	box-shadow: 0 0 3px 5px rgba(0,0,0,.7);
+	box-shadow: 0 0 3px 5px $navbar-background;
 }
 
 .navbar-brand {
