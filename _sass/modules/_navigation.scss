@@ -1,0 +1,52 @@
+.dropdown-menu {
+	.dropdown-item.nav-item {
+		margin-left: 0;
+	}
+}
+
+.nav.nav-pills {
+	padding-top: .5em;
+
+	a.nav-link {
+		color: white;
+		font-weight: bold;
+		/*
+		&.active {
+			background-color: #FD542D;
+		}
+		*/
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.nav.nav-pills {
+		float: right;
+		padding-top: 0;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.nav-top {
+		margin-top: 2em;
+	}
+}
+
+.navbar {
+	background: rgba(0, 0, 0, .7);
+	border-radius: .5em;
+	box-shadow: 0 0 3px 5px rgba(0,0,0,.7);
+}
+
+.navbar-brand {
+	max-height: 2em;
+	max-width: 75%;
+
+	img {
+		max-height: inherit;
+	}
+}
+
+.navbar-toggler {
+	color: white;
+	padding-top: .75em;
+}
