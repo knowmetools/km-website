@@ -11,3 +11,10 @@ markdown: kramdown
 
 gems:
   - octopress-autoprefixer
+
+# jekyll-assets settings
+assets:
+  sources:
+    - _assets/images
+    - _assets/javascript
+    - _assets/stylesheets
