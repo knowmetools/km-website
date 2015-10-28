@@ -13,19 +13,6 @@
 	}
 }
 
-@include media-breakpoint-up(md) {
-	.nav.nav-pills {
-		float: right;
-		padding-top: 0;
-	}
-}
-
-@include media-breakpoint-up(md) {
-	.nav-top {
-		margin-top: 2em;
-	}
-}
-
 .navbar {
 	background: rgba(0, 0, 0, .7);
 	border-radius: .5em;
@@ -44,4 +31,19 @@
 .navbar-toggler {
 	color: white;
 	padding-top: .75em;
+}
+
+/******************/
+/* Responsiveness */
+/******************/
+
+@include media-breakpoint-up(md) {
+	.nav.nav-pills {
+		float: right;
+		padding-top: 0;
+	}
+
+	.nav-top {
+		margin-top: 2em;
+	}
 }
