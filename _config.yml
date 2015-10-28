@@ -7,6 +7,9 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://knowmetools.com" # the base hostname & protocol for your site
 
 # Build settings
+exclude:
+  - Gemfile
+  - Gemfile.lock
 markdown: kramdown
 
 gems:
