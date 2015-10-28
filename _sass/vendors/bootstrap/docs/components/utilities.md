@@ -4,7 +4,7 @@ title: Utility classes
 group: components
 ---
 
-Bootstrap includes dozens of utilities—classes with a single purpose. They're designed to reduce the frequency of highly repetitive declarations in your CSS down while allowing for quick and easy development.
+Bootstrap includes dozens of utilities—classes with a single purpose. They're designed to reduce the frequency of highly repetitive declarations in your CSS while allowing for quick and easy development.
 
 ## Contents
 
@@ -13,7 +13,7 @@ Bootstrap includes dozens of utilities—classes with a single purpose. They're 
 
 ## Spacing
 
-Assign `margin` or `padding` to an element or a subset of it's sides with shorthand classes. Includes support for individual properties, all properties, and vertical and horizontal properties. All classes are multiples on the global default value, `1rem`.
+Assign `margin` or `padding` to an element or a subset of its sides with shorthand classes. Includes support for individual properties, all properties, and vertical and horizontal properties. All classes are multiples on the global default value, `1rem`.
 
 ### Margin
 
@@ -108,7 +108,7 @@ Transform text in components with text capitalization classes.
 {% example html %}
 <p class="text-lowercase">Lowercased text.</p>
 <p class="text-uppercase">Uppercased text.</p>
-<p class="text-capitalize">Capitalized text.</p>
+<p class="text-capitalize">CapiTaliZed text.</p>
 {% endexample %}
 
 ## Contextual colors and backgrounds
@@ -132,6 +132,7 @@ Similar to the contextual text color classes, easily set the background of an el
 <div class="bg-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</div>
 <div class="bg-warning">Etiam porta sem malesuada magna mollis euismod.</div>
 <div class="bg-danger">Donec ullamcorper nulla non metus auctor fringilla.</div>
+<div class="bg-inverse">Cras mattis consectetur purus sit amet fermentum.</div>
 {% endexample %}
 
 {% callout info %}
@@ -148,12 +149,11 @@ Ensure that any meaning conveyed through color is also conveyed in a format that
 
 ## Close icon
 
-Use a generic close icon for dismissing content like modals and alerts. **Be sure to include screen reader text when you can** as we've done with `.sr-only`.
+Use a generic close icon for dismissing content like modals and alerts. **Be sure to include text for screen readers**, as we've done with `aria-label`.
 
 {% example html %}
 <button type="button" class="close" aria-label="Close">
   <span aria-hidden="true">&times;</span>
-  <span class="sr-only">Close</span>
 </button>
 {% endexample %}
 
@@ -231,16 +231,6 @@ Easily clear `float`s by adding `.clearfix` **to the parent element**. Utilizes 
 }
 {% endhighlight %}
 
-## Hidden content
-
-Hide any HTML element with the `[hidden]` attribute. Previously, v3.x included a `.hidden` class that forced toggled content. However, we removed it due to conflicts with jQuery's `hide()` function. It's taken from [PureCSS](http://purecss.io).
-
-Furthermore, `.invisible` can be used to toggle the visibility of an element, meaning its `display` is not modified and the element can still affect the flow of the document.
-
-{% highlight html %}
-<input type="text" hidden>
-{% endhighlight %}
-
 ## Invisible content
 
 The `.invisible` class can be used to toggle only the visibility of an element, meaning its `display` is not modified and the element can still affect the flow of the document.
@@ -261,9 +251,13 @@ The `.invisible` class can be used to toggle only the visibility of an element, 
 }
 {% endhighlight %}
 
-## Screen readers
+## Screen readers and keyboard users
 
-Hide an element to all devices **except screen readers** with `.sr-only`. Combine `.sr-only` with `.sr-only-focusable` to show the element again when it's focused (e.g. by a keyboard-only user). Necessary for following [accessibility best practices](../getting-started/#accessibility). Can also be used as mixins.
+Hide an element to all devices **except screen readers** with `.sr-only`. Combine `.sr-only` with `.sr-only-focusable` to show the element again when it's focused (e.g. by a keyboard-only user). Can also be used as mixins.
+
+{% comment %}
+Necessary for following [accessibility best practices](../getting-started/#accessibility).
+{% endcomment %}
 
 {% highlight html %}
 <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
@@ -324,3 +318,19 @@ Aspect ratios can be customized with modifier classes.
   <iframe class="embed-responsive-item" src="..."></iframe>
 </div>
 {% endhighlight %}
+
+## HTML5 `[hidden]` attribute
+
+HTML5 adds [a new global attribute named `[hidden]`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden), which is styled as `display: none` by default. Borrowing an idea from [PureCSS](http://purecss.io), we improve upon this default by making `[hidden] { display: none !important; }` to help prevent its `display` from getting accidentally overridden. While `[hidden]` isn't natively supported by IE9-10, the explicit declaration in our CSS gets around that problem.
+
+{% highlight html %}
+<input type="text" hidden>
+{% endhighlight %}
+
+{% callout warning %}
+#### jQuery incompatibility
+
+`[hidden]` is not compatible with jQuery's `$(...).hide()` and `$(...).show()` methods. This could potentially change in jQuery 3, but we're not holding our breath. Therefore, we don't currently especially endorse `[hidden]` over other techniques for managing the `display` of elements.
+{% endcallout %}
+
+To merely toggle the visibility of an element, meaning its `display` is not modified and the element can still affect the flow of the document, use [the `.invisible` class](#invisible-content) instead.

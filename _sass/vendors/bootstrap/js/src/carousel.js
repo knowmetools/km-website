@@ -119,6 +119,13 @@ const Carousel = (($) => {
       }
     }
 
+    nextWhenVisible() {
+      // Don't call next when the page isn't visible
+      if (!document.hidden) {
+        this.next()
+      }
+    }
+
     prev() {
       if (!this._isSliding) {
         this._slide(Direction.PREVIOUS)
@@ -152,7 +159,7 @@ const Carousel = (($) => {
 
       if (this._config.interval && !this._isPaused) {
         this._interval = setInterval(
-          $.proxy(this.next, this), this._config.interval
+          $.proxy(document.visibilityState ? this.nextWhenVisible : this.next, this), this._config.interval
         )
       }
     }
@@ -390,10 +397,11 @@ const Carousel = (($) => {
 
         if (typeof config === 'number') {
           data.to(config)
-
-        } else if (action) {
+        } else if (typeof action === 'string') {
+          if (data[action] === undefined) {
+            throw new Error(`No method named "${action}"`)
+          }
           data[action]()
-
         } else if (_config.interval) {
           data.pause()
           data.cycle()

@@ -21,18 +21,21 @@ Here are the big ticket items you'll want to be aware of when moving from v3 to 
 
 ### Global changes
 
-- Switched from LESS to SCSS for our source CSS files.
+- Switched from [Less](http://lesscss.org/) to [SCSS](http://sass-lang.com/) for our source CSS files.
 - Switched from `px` to `rem` as our primary CSS unit.
-- Media queries are now in `em`s instead of `px`s.
 - Global font-size increased from `14px` to `16px`.
 - Added a new grid tier for ~`480px` and below.
-- Replaced the separate optional theme with configurable options via SCSS variables (e.g., `@enable-gradients: true`).
+- Replaced the separate optional theme with configurable options via SCSS variables (e.g., `$enable-gradients: true`).
 
 ### Components
 
 - Dropped panels, thumbnails, and wells for a new all-encompassing component, cards.
-- Dropped the Glyphicons icon font.
+- Dropped the Glyphicons icon font. If you need icons, some options are:
+  - the upstream version of [Glyphicons](http://glyphicons.com/)
+  - [Octicons](https://octicons.github.com/)
+  - [Font Awesome](https://fortawesome.github.io/Font-Awesome/)
 - Dropped the Affix jQuery plugin. We recommend using a `position: sticky` polyfill instead. [See the HTML5 Please entry](http://html5please.com/#sticky) for details and specific polyfill recommendations.
+  - If you were using Affix to apply additional, non-`position` styles, the polyfills might not support your use case. One option for such uses is the third-party [ScrollPos-Styler](https://github.com/acch/scrollpos-styler) library.
 - Refactored nearly all components to use more unnested classes instead of children selectors.
 
 ### Misc
@@ -54,12 +57,18 @@ New to Bootstrap 4 is the Reboot, a new stylesheet that builds on Normalize with
 - `.dl-horizontal` now requires grid classes, increasing flexbility in column widths.
 - Custom `<blockquote>` styling has moved to classes—`.blockquote` and the `.blockquote-reverse` modifier.
 
+### Images
+
+- Renamed `.img-responsive` to `.img-fluid`.
+
 ### Tables
 
 - Nearly all instances of the `>` selector have been removed, meaning nested tables will now automatically inherit styles from their parents. This greatly simplifies our selectors and potential customizations.
 - Responsive tables no longer require a wrapping element. Instead, just put the `.table-responsive` right on the `<table>`.
 - Renamed `.table-condensed` to `.table-sm` for consistency.
 - Added a new `.table-inverse` option.
+- Added a new `.table-reflow` option.
+- Added table header modifers: `.thead-default` and `.thead-inverse`
 
 ### Forms
 
@@ -75,6 +84,14 @@ New to Bootstrap 4 is the Reboot, a new stylesheet that builds on Normalize with
 
 - Added a new `~480px` grid breakpoint, meaning there are now five total tiers.
 
+### Buttons
+
+- Dropped the `.btn-xs` class entirely.
+
+### Button group
+
+- Dropped the `.btn-group-xs` class entirely.
+
 ### Navs
 
 - Dropped nearly all `>` selectors for simpler styling via un-nested classes.
@@ -87,6 +104,20 @@ New to Bootstrap 4 is the Reboot, a new stylesheet that builds on Normalize with
 ### Panels, thumbnails, and wells
 
 Dropped entirely for the new card component.
+
+#### Panels
+
+- `.panel` to `.card`
+- `.panel-default` removed and no replacement
+- `.panel-heading` to `.card-header`
+- `.panel-title` to `.card-title`
+- `.panel-body` to `.card-block`
+- `.panel-footer` to `.card-footer`
+- `.panel-primary` to `.card-primary` and `.card-inverse`
+- `.panel-success` to `.card-success` and `.card-inverse`
+- `.panel-info` to `.card-info` and `.card-inverse`
+- `.panel-warning` to `.card-warning` and `.card-inverse`
+- `.panel-danger` to `.card-danger` and `.card-inverse`
 
 ### Carousel
 
@@ -112,7 +143,7 @@ We've added new components and changed some existing ones. Here are the new or u
 | Cards | New, more flexible component to replace v3's panels, thumbnails, and wells. |
 | New navbar | Replaces the previous navbar with a new, simpler component. |
 | New progress bars | Replaces the old `.progress` `<div>` with a real `<progress>` element. |
-| New table variants | |
+| New table variants | Adds `.table-inverse`, table head options, replaces `.table-condensed` with `.table-sm`, and `.table-reflow`. |
 | New utility classes | |
 
 TODO: audit new classes that didn't exist in v3
@@ -127,7 +158,7 @@ The following components have been removed in v4.0.0.
 | Wells |  | Cards |
 | Justified navs | | |
 
-TODO: audit classes in v4 that aren't present in v4
+TODO: audit classes in v3 that aren't present in v4
 
 ### Responsive utilities
 
@@ -151,7 +182,7 @@ Note that the changes to the grid breakpoints in v4 means that you'll need to go
 ## Misc notes to prioritize
 
 - Removed the `min--moz-device-pixel-ratio` typo hack for retina media queries
-- Dropped `.hidden` and `.show` because it interferes with jQuery's `$(...).hide()`.
+- Dropped `.hidden` and `.show` because they conflict with jQuery's `$(...).hide()` and `$(...).show()` methods.
 - Change buttons' `[disabled]` to `:disabled` as IE9+ supports `:disabled`. However `fieldset[disabled]` is still necessary because [native disabled fieldsets are still buggy in IE11](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset#Browser_compatibility).
 
 TODO: audit list of stuff in v3 that was marked as deprecated

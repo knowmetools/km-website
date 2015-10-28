@@ -427,7 +427,7 @@ var Modal = (function ($) {
         this._originalBodyPadding = document.body.style.paddingRight || '';
 
         if (this._isBodyOverflowing) {
-          document.body.style.paddingRight = bodyPadding + (this._scrollbarWidth + 'px');
+          document.body.style.paddingRight = bodyPadding + this._scrollbarWidth + 'px';
         }
       }
     }, {
@@ -462,6 +462,9 @@ var Modal = (function ($) {
           }
 
           if (typeof config === 'string') {
+            if (data[config] === undefined) {
+              throw new Error('No method named "' + config + '"');
+            }
             data[config](relatedTarget);
           } else if (_config.show) {
             data.show(relatedTarget);

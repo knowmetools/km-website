@@ -427,7 +427,7 @@ const Modal = (($) => {
 
       if (this._isBodyOverflowing) {
         document.body.style.paddingRight =
-          bodyPadding + `${this._scrollbarWidth}px`
+          `${bodyPadding + this._scrollbarWidth}px`
       }
     }
 
@@ -463,8 +463,10 @@ const Modal = (($) => {
         }
 
         if (typeof config === 'string') {
+          if (data[config] === undefined) {
+            throw new Error(`No method named "${config}"`)
+          }
           data[config](relatedTarget)
-
         } else if (_config.show) {
           data.show(relatedTarget)
         }

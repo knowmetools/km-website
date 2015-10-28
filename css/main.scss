@@ -19,6 +19,17 @@ footer {
 	margin-top: 5em;
 }
 
+.dropdown-menu {
+	.dropdown-item.nav-item {
+		margin-left: 0;
+	}
+}
+
+/*
+.nav-pills .nav-item.open .nav-link, .nav-pills .nav-item.open .nav-link:focus, .nav-pills .nav-item.open .nav-link:hover {
+	background-color: #FD542D;
+}
+*/
 .navbar {
 	background: rgba(0, 0, 0, .7);
 	border-radius: .5em;
@@ -36,10 +47,11 @@ footer {
 	a.nav-link {
 		color: white;
 		font-weight: bold;
-
+		/*
 		&.active {
 			background-color: #FD542D;
 		}
+		*/
 	}
 }
 
