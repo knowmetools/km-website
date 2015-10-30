@@ -12,6 +12,10 @@ body {
 	font-family: $font-stack;
 }
 
+main {
+	margin-top: 3em;
+}
+
 footer {
 	margin-top: 5em;
 }
@@ -39,4 +43,8 @@ footer {
 
 .hero-wrapper {
 	height: 100vh;
+}
+
+.team-member {
+	margin: .2em 1em;
 }
