@@ -8,6 +8,11 @@
 @import "modules/vars";
 @import "modules/navigation";
 
+header {
+	/* account for header height */
+	margin-bottom: 4em;
+}
+
 body {
 	font-family: $font-stack;
 }
