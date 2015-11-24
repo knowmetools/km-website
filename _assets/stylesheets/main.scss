@@ -15,6 +15,7 @@ header {
 
 body {
 	font-family: $font-stack;
+	height: 100%;
 }
 
 main {
@@ -38,6 +39,7 @@ footer {
 	color: $brand-primary;
 }
 
+/*
 .hero {
 	background: url(asset_path('FinalLandingPageSmall.jpg')) no-repeat center center;
 	background-size: cover;
@@ -49,17 +51,28 @@ footer {
 	height: 100vh;
 	z-index: -10;
 }
-
+*/
 .hero-wrapper {
-	height: 100vh;
+	height: $hero-height;
+
+	.hero {
+		background-size: cover;
+		width: 100%;
+		height: $hero-height;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -10;
+	}
 }
 
 /******************/
 /* Responsiveness */
 /******************/
 
+/*
 @include media-breakpoint-up(lg) {
 	.hero {
-		background: url(asset_path('FinalLandingPage.jpg')) no-repeat center center;
 	}
 }
+*/
