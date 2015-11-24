@@ -39,7 +39,7 @@ footer {
 }
 
 .hero {
-	background: url(asset_path('home_hero.jpg')) no-repeat center center;
+	background: url(asset_path('FinalLandingPageSmall.jpg')) no-repeat center center;
 	background-size: cover;
 
 	position: absolute;
@@ -52,4 +52,14 @@ footer {
 
 .hero-wrapper {
 	height: 100vh;
+}
+
+/******************/
+/* Responsiveness */
+/******************/
+
+@include media-breakpoint-up(lg) {
+	.hero {
+		background: url(asset_path('FinalLandingPage.jpg')) no-repeat center center;
+	}
 }
