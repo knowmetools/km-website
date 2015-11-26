@@ -2,3 +2,8 @@
 {% javascript vendors/bootstrap/bootstrap.min %}
 {% javascript common %}
 {% javascript hero %}
+<script type="text/javascript">
+	$(document).ready(function() {
+		highlightNavbar('{{ page.header_id }}');
+	});
+</script>
