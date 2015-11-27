@@ -1,40 +1,45 @@
-var setBg = function($el) {
+/* Determine which background to use for each hero image. */
+var calcBackgrounds = function() {
 
-	// determine which background to use
-	// for now it is automatically 'bg'
-	var background = undefined;
+	$('.hero').each(function()) {
 
-	if ($el.attr("sm-bg") !== undefined && $el.attr("sm-width") !== undefined) {
-		// console.log("$(window).width() < " + parseInt($el.attr("sm-width"), 10) + ": " + ($(window).width() < $el.attr("sm-width")))
-		if ($(window).width() < parseInt($el.attr("sm-width"), 10)) {
-			console.log("Set background to small image");
-			background = "url('" + $el.attr("sm-bg") + "') no-repeat center center";
-		} else if ($el.attr("bg") !== undefined) {
-			console.log("Set background to normal image.");
-			background = "url('" + $el.attr("bg") + "') no-repeat center center";
+		// Try to use the small image first.
+		var url = $(this).attr("sm-bg");
+		var width = $(this).attr("sm-width");
+
+		// Make sure the url and size exist, and that the window is smaller than
+		// the given size.
+		if (url !== undefined && width !== undefined) {
+			if ($(window).width() < parseInt(width, 10)) {
+				setBackground($(this), url);
+				return;
+			}
+		}
+
+		// If the small image wasn't used, use the normal background image.
+		url = $(this).attr("bg");
+
+		if (url !== undefined) {
+			setBackground($(this), url);
 		}
 	}
+}
 
-	if (background !== undefined) {
-		$el.css("background", background);
-		console.log("For window width of " + $(window).width() + ", set background to: '" + background + "'");
-	}
+/* Set the background image for a specified element to the given url. */
+var setBackground = function($el, url) {
+	$el.css("background", "url('" + url + "') no-repeat center center");
 };
 
+// Determine the backgrounds on page load.
 $(document).ready(function() {
-	$('.hero').each(function() {
-		setBg($(this));
-	});
+	calcBackgrounds();
 });
 
+// Timer for executing action after the window is done resizing
 var resizeTimer;
 
+// Only recalculate hero images after no resizing has been done for 250 milliseconds.
 $(window).resize(function() {
-
 	clearTimeout(resizeTimer);
-	resizeTimer = setTimeout(function(e) {
-		$('.hero').each(function() {
-			setBg($(this));
-		});
-	}, 250);
+	resizeTimer = setTimeout(calcBackgrounds, 250);
 });
