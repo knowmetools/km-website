@@ -1,7 +1,7 @@
 /* Determine which background to use for each hero image. */
 var calcBackgrounds = function() {
 
-	$('.hero').each(function()) {
+	$('.hero').each(function() {
 
 		// Try to use the small image first.
 		var url = $(this).attr("sm-bg");
@@ -22,8 +22,8 @@ var calcBackgrounds = function() {
 		if (url !== undefined) {
 			setBackground($(this), url);
 		}
-	}
-}
+	});
+};
 
 /* Set the background image for a specified element to the given url. */
 var setBackground = function($el, url) {
