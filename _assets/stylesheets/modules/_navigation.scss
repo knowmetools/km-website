@@ -6,15 +6,16 @@
 	padding-top: .5em;
 
 	a.nav-link {
-		color: white;
 		font-weight: bold;
 	}
 }
 
+.nav-container {
+	padding: 0;
+}
+
 .navbar {
 	background: $navbar-background;
-	border-radius: .5em;
-	box-shadow: 0 0 3px 5px $navbar-background;
 }
 
 .navbar-brand {
@@ -23,11 +24,11 @@
 
 	img {
 		max-height: inherit;
+		width: auto;
 	}
 }
 
 .navbar-toggler {
-	color: white;
 	padding-top: .75em;
 }
 
@@ -39,9 +40,5 @@
 	.nav.nav-pills {
 		float: right;
 		padding-top: 0;
-	}
-
-	.nav-top {
-		margin-top: 2em;
 	}
 }

@@ -1,4 +1,4 @@
-/* fonts */
+/* Fonts */
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
 
 /* Vendor styles */
@@ -8,20 +8,60 @@
 @import "modules/vars";
 @import "modules/navigation";
 
+header {
+	/* account for header height */
+	margin-bottom: 4em;
+}
+
 body {
 	font-family: $font-stack;
+	height: 100%;
 }
 
 main {
-	padding-top: 100vh;
+	margin-top: 1em;
+
+	section {
+		margin: 2em 0;
+	}
 }
 
 footer {
 	margin-top: 5em;
 }
 
+.company-message {
+	p {
+		font-size: 1.15em;
+	}
+}
+
 .copyright, .legal {
 	font-size: .8em;
+}
+
+.faq-topic {
+	.topic {
+		margin-bottom: 1em;
+		font-weight: bold;
+	}
+
+	.title {
+		margin-bottom: 0;
+		font-size: 1.25em;
+		font-weight: bold;
+	}
+
+	.question {
+		margin-bottom: .75em;
+	}
+}
+
+a.faq-topic {
+	display: block;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	font-size: 1.75em;
 }
 
 .feature-icon {
@@ -29,8 +69,9 @@ footer {
 	color: $brand-primary;
 }
 
+/*
 .hero {
-	background: url(asset_path('screenshot.jpg')) no-repeat center center;
+	background: url(asset_path('FinalLandingPageSmall.jpg')) no-repeat center center;
 	background-size: cover;
 
 	position: absolute;
@@ -39,4 +80,61 @@ footer {
 	width: 100%;
 	height: 100vh;
 	z-index: -10;
+}
+*/
+.hero-wrapper {
+	height: $hero-height;
+
+	.hero {
+		background: rgb(100, 100, 100);
+		background-size: cover;
+		width: 100%;
+		height: $hero-height;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -10;
+	}
+
+	.hero-caption {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		color: white;
+		padding: .25em;
+		background: rgba(20, 20, 20, .9);
+		font-size: 1.25em;
+		box-shadow: 0px 0px 5px 10px rgba(20, 20, 20, .9);
+	}
+}
+
+.staff {
+	.card-header {
+		background-color: $gray-light;
+
+		img {
+			max-width: 7em;
+			max-height: 7em;
+			border: 3px solid white;
+		}
+	}
+}
+
+/******************/
+/* Responsiveness */
+/******************/
+
+@include media-breakpoint-up(md) {
+	.hero-wrapper .hero-caption {
+		position: absolute;
+		left: 0;
+		margin-left: 45%;
+		margin-right: 10%;
+		padding-left: .75em;
+		transform: translateY(-50%);
+		text-align: left;
+		font-size: 2.5em;
+	}
 }
