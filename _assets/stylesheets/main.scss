@@ -40,6 +40,30 @@ footer {
 	font-size: .8em;
 }
 
+.faq-topic {
+	.topic {
+		margin-bottom: 1em;
+		font-weight: bold;
+	}
+
+	.title {
+		margin-bottom: 0;
+		font-size: 1.25em;
+		font-weight: bold;
+	}
+
+	.question {
+		margin-bottom: .75em;
+	}
+}
+
+a.faq-topic {
+	display: block;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	font-size: 1.75em;
+}
+
 .feature-icon {
 	font-size: 6em;
 	color: $brand-primary;
