@@ -13,9 +13,8 @@ $('.navbar-toggler').on('click', function() {
 	}
 });
 
-$(document).ready(function() {
-	// find header link for current page
-	var $el = $("a#" + HEADER_ID);
+var highlightNavbar = function(el_id) {
+	var $el = $("a#" + el_id);
 	// make it the active link
 	$el.addClass("active");
 
@@ -28,4 +27,4 @@ $(document).ready(function() {
 		var $link = $el.parent().parent().find('.dropdown-toggle');
 		$link.addClass("active");
 	}
-});
+}
