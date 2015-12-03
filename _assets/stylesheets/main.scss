@@ -1,11 +1,13 @@
 /* Fonts */
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
 
+/* Variables */
+@import "modules/vars";
+
 /* Vendor styles */
 @import "vendors/bootstrap/scss/bootstrap";
 
 /* Custom modules */
-@import "modules/vars";
 @import "modules/navigation";
 
 header {
@@ -22,7 +24,7 @@ main {
 	margin-top: 1em;
 
 	section {
-		margin: 2em 0;
+		margin: 3em 0;
 	}
 }
 
@@ -110,6 +112,11 @@ a.faq-topic {
 	}
 }
 
+.photo-img {
+	border: .5rem solid white;
+	box-shadow: 0px 0px 5px 5px $photo-shadow;
+}
+
 .staff {
 	.card-header {
 		background-color: $gray-light;
@@ -120,6 +127,21 @@ a.faq-topic {
 			border: 3px solid white;
 		}
 	}
+}
+
+.team-member {
+	margin-bottom: 2em;
+}
+
+.team-img {
+	max-width: 100%;
+	height: auto;
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+.title {
+	margin-bottom: 1em;
 }
 
 /******************/
