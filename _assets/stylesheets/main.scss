@@ -1,11 +1,13 @@
 /* Fonts */
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
 
+/* Variables */
+@import "modules/vars";
+
 /* Vendor styles */
 @import "vendors/bootstrap/scss/bootstrap";
 
 /* Custom modules */
-@import "modules/vars";
 @import "modules/navigation";
 
 header {
