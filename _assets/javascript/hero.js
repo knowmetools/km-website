@@ -4,8 +4,8 @@ var calcBackgrounds = function() {
 	$('.hero').each(function() {
 
 		// Try to use the small image first.
-		var url = $(this).attr("sm-bg");
-		var width = $(this).attr("sm-width");
+		var url = $(this).attr("data-sm-bg");
+		var width = $(this).attr("data-sm-width");
 
 		// Make sure the url and size exist, and that the window is smaller than
 		// the given size.
@@ -17,7 +17,7 @@ var calcBackgrounds = function() {
 		}
 
 		// If the small image wasn't used, use the normal background image.
-		url = $(this).attr("bg");
+		url = $(this).attr("data-bg");
 
 		if (url !== undefined) {
 			setBackground($(this), url);
