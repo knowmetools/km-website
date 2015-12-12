@@ -9,6 +9,14 @@ $(document).ready(function() {
 		var input_gotcha = $form.find('#gotcha').val();
 
 		if (input_gotcha !== '') {
+			noty({
+				layout: 'topCenter',
+				type: 'error',
+				text: 'You have managed to fill out the hidden field used to catch spam. Please clear that field and try again.',
+				closeWith: ['button', 'backdrop'],
+				modal: true
+			});
+			
 			return false;
 		}
 
