@@ -1,0 +1,44 @@
+.dropdown-menu .dropdown-item.nav-item {
+	margin-left: 0;
+}
+
+.nav.nav-pills {
+	padding-top: .5em;
+
+	a.nav-link {
+		font-weight: bold;
+	}
+}
+
+.nav-container {
+	padding: 0;
+}
+
+.navbar {
+	background: $navbar-background;
+}
+
+.navbar-brand {
+	max-height: 2em;
+	max-width: 75%;
+
+	img {
+		max-height: inherit;
+		width: auto;
+	}
+}
+
+.navbar-toggler {
+	padding-top: .55em;
+}
+
+/******************/
+/* Responsiveness */
+/******************/
+
+@include media-breakpoint-up(md) {
+	.nav.nav-pills {
+		float: right;
+		padding-top: 0;
+	}
+}

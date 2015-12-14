@@ -1,6 +1,8 @@
 # jekyll generated
 _site
+.asset-cache/
 .sass-cache
+.jekyll-metadata
 
 # sublime text files
 *.sublime-project

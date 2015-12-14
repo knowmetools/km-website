@@ -1,30 +1,28 @@
 <header>
 
-  <div class="container">
-    <nav class="navbar navbar-light bg-transparent nav-top">
-      <a class="navbar-brand" href="/"><img src="/assets/images/logo.png" alt="Know Me" /></a>
+  <div class="container nav-container">
+    <nav class="navbar navbar-light navbar-fixed-top">
+      <a class="navbar-brand" href="/">{% image logo.png alt:"Know Me" %}</a>
       <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
-        &#9776;
+        <i class="fa fa-bars"></i>
       </button>
       <div class="collapse navbar-toggleable-sm" id="exCollapsingNavbar2">
         <ul class="nav nav-pills">
           <li class="nav-item">
-            <a class="nav-link" id="home" href="#">Home</a>
+            <a class="nav-link" id="home" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="about" href="#">About Us</a>
+            <a class="nav-link" id="about" href="/about/">About Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Apps</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item nav-item" id="profile" href="/profile/">Profile</a>
+              <a class="dropdown-item nav-item" id="friends" href="/friends/">Friends</a>
+            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="profile" href="#">Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="friends" href="#">Friends</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="teamtalk" href="#">TeamTalk</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="help" href="#">Help</a>
+            <a class="nav-link" id="help" href="/help/">Help</a>
           </li>
         </ul>
       </div>
