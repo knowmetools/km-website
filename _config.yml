@@ -13,6 +13,7 @@ exclude:
 markdown: kramdown
 
 gems:
+  - jekyll-assets
   - octopress-autoprefixer
 
 # jekyll-assets settings
