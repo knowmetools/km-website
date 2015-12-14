@@ -64,4 +64,5 @@ DEPENDENCIES
   jekyll
   jekyll-assets
   octopress-autoprefixer
+  sass
   uglifier
