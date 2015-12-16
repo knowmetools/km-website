@@ -26,6 +26,7 @@ section {
 
 footer {
 	margin-top: 5em;
+	font-size: .9em;
 }
 
 .company-message {
@@ -102,9 +103,7 @@ a.faq-topic {
 		text-align: center;
 		color: white;
 		padding: .25em;
-		background: rgba(20, 20, 20, .9);
 		font-size: 1.25em;
-		box-shadow: 0px 0px 5px 10px rgba(20, 20, 20, .9);
 	}
 }
 
@@ -153,6 +152,6 @@ a.faq-topic {
 		padding-left: .75em;
 		transform: translateY(-50%);
 		text-align: left;
-		font-size: 2.5em;
+		font-size: 2em;
 	}
 }
