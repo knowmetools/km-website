@@ -8,3 +8,4 @@ gem 'jekyll-assets'
 
 # additional gems for jekyll-assets
 gem 'uglifier'
+gem 'sass'

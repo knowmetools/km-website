@@ -3,12 +3,13 @@ $(document).ready(function() {
 	$('#contact-form').submit(function(e) {
 
 		var $form = $(this);
-		var input_name = $form.find('#name').val();
-		var input_email = $form.find('#email').val();
-		var input_message = $form.find('#message').val();
-		var input_gotcha = $form.find('#gotcha').val();
+		
+		var name = $form.find('#name').val();
+		var email = $form.find('#email').val();
+		var message = $form.find('#message').val();
+		var gotcha = $form.find('#gotcha').val();
 
-		if (input_gotcha !== '') {
+		if (gotcha !== '') {
 			noty({
 				layout: 'topCenter',
 				type: 'error',
@@ -21,9 +22,9 @@ $(document).ready(function() {
 		}
 
 		data = {
-			name: input_name,
-			email: input_email,
-			message: input_message,
+			name: name,
+			email: email,
+			message: message,
 		};
 
 		var request = $.ajax({
@@ -33,7 +34,23 @@ $(document).ready(function() {
 			dataType: "json"
 		});
 
+		// create notification that message is sending
+		var sending_message = noty({
+			layout: 'topCenter',
+			type: 'information',
+			text: 'Sending message...'
+		});
+
 		request.done(function() {
+			// reset form values
+			$form.trigger("reset");
+
+			$form.find('*:invalid').each(function() {
+				$(this).css('box-shadow', 'none');
+			});
+
+			// notify user that message was sent
+			sending_message.close();
 			noty({
 				layout: 'topCenter',
 				type: 'success',
@@ -43,6 +60,7 @@ $(document).ready(function() {
 		});
 
 		request.fail(function() {
+			sending_message.close();
 			noty({
 				layout: 'topCenter',
 				type: 'error',
