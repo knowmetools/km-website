@@ -3,15 +3,11 @@ $(document).ready(function() {
 	$('#contact-form').submit(function(e) {
 
 		var $form = $(this);
-		var $input_name = $form.find('#name');
-		var $input_email = $form.find('#email');
-		var $input_message = $form.find('#message');
-		var $input_gotcha = $form.find('#gotcha');
-
-		var name = $input_name.val();
-		var email = $input_email.val();
-		var message = $input_message.val();
-		var gotcha = $input_gotcha.val();
+		
+		var name = $form.find('#name').val();
+		var email = $form.find('#email').val();
+		var message = $form.find('#message').val();
+		var gotcha = $form.find('#gotcha').val();
 
 		if (gotcha !== '') {
 			noty({
@@ -47,10 +43,7 @@ $(document).ready(function() {
 
 		request.done(function() {
 			// reset form values
-			$input_name.val('');
-			$input_email.val('');
-			$input_message.val('');
-			$input_gotcha.val('');
+			$form.trigger("reset");
 
 			// notify user that message was sent
 			sending_message.close();
