@@ -3,12 +3,17 @@ $(document).ready(function() {
 	$('#contact-form').submit(function(e) {
 
 		var $form = $(this);
-		var input_name = $form.find('#name').val();
-		var input_email = $form.find('#email').val();
-		var input_message = $form.find('#message').val();
-		var input_gotcha = $form.find('#gotcha').val();
+		var $input_name = $form.find('#name');
+		var $input_email = $form.find('#email');
+		var $input_message = $form.find('#message');
+		var $input_gotcha = $form.find('#gotcha');
 
-		if (input_gotcha !== '') {
+		var name = $input_name.val();
+		var email = $input_email.val();
+		var message = $input_message.val();
+		var gotcha = $input_gotcha.val();
+
+		if (gotcha !== '') {
 			noty({
 				layout: 'topCenter',
 				type: 'error',
@@ -21,9 +26,9 @@ $(document).ready(function() {
 		}
 
 		data = {
-			name: input_name,
-			email: input_email,
-			message: input_message,
+			name: name,
+			email: email,
+			message: message,
 		};
 
 		var request = $.ajax({
@@ -34,6 +39,13 @@ $(document).ready(function() {
 		});
 
 		request.done(function() {
+			// reset form values
+			$input_name.val('');
+			$input_email.val('');
+			$input_message.val('');
+			$input_gotcha.val('');
+
+			// notify user that message was sent
 			noty({
 				layout: 'topCenter',
 				type: 'success',
