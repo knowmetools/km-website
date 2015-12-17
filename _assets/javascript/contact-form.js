@@ -45,6 +45,10 @@ $(document).ready(function() {
 			// reset form values
 			$form.trigger("reset");
 
+			$form.find('*:invalid').each(function() {
+				$(this).css('box-shadow', 'none');
+			});
+
 			// notify user that message was sent
 			sending_message.close();
 			noty({
