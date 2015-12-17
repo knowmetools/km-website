@@ -18,8 +18,5 @@ gems:
 
 # jekyll-assets settings
 assets:
-  compress:
-    css: false
-    js: false
   sources:
     - _assets/javascript
