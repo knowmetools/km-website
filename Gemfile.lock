@@ -2,9 +2,6 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.4.0)
-    autoprefixer-rails (6.1.2)
-      execjs
-      json
     colorator (0.1)
     concurrent-ruby (1.0.0)
     execjs (2.6.0)
@@ -37,9 +34,6 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     mercenary (0.3.5)
-    octopress-autoprefixer (2.0.0)
-      autoprefixer-rails
-      jekyll (~> 3.0)
     rack (1.6.4)
     rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
@@ -63,6 +57,5 @@ PLATFORMS
 DEPENDENCIES
   jekyll
   jekyll-assets
-  octopress-autoprefixer
   sass
   uglifier
