@@ -3,29 +3,23 @@ title: Know Me
 email: team@knowmetools.com
 description: > # this means to ignore newlines until "baseurl:"
   Site for Know Me LLC
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://knowmetools.com" # the base hostname & protocol for your site
+baseurl: ""
+url: "http://knowmetools.com"
 
 # Build settings
 exclude:
   - Gemfile
   - Gemfile.lock
+
 markdown: kramdown
 
 gems:
-  - octopress-autoprefixer
+  - jekyll-assets
 
 # jekyll-assets settings
 assets:
-  sources:
-    - _assets/images
-    - _assets/javascript
-    - _assets/stylesheets
-
   compress:
-    css: sass
-    js: uglifier
-
-  # minification
-  js_compressor: uglifier
-  css_compressor: sass
+    css: false
+    js: false
+  sources:
+    - _assets/javascript
