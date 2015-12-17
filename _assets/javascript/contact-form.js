@@ -38,6 +38,13 @@ $(document).ready(function() {
 			dataType: "json"
 		});
 
+		// create notification that message is sending
+		var sending_message = noty({
+			layout: 'topCenter',
+			type: 'information',
+			text: 'Sending message...'
+		});
+
 		request.done(function() {
 			// reset form values
 			$input_name.val('');
@@ -46,6 +53,7 @@ $(document).ready(function() {
 			$input_gotcha.val('');
 
 			// notify user that message was sent
+			sending_message.close();
 			noty({
 				layout: 'topCenter',
 				type: 'success',
@@ -55,6 +63,7 @@ $(document).ready(function() {
 		});
 
 		request.fail(function() {
+			sending_message.close();
 			noty({
 				layout: 'topCenter',
 				type: 'error',
