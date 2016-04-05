@@ -115,6 +115,10 @@ a.faq-topic {
 	h3 {
 		border-bottom: 2px solid $brand-primary;
 		padding-bottom: .25em;
+
+		i {
+			color: $brand-primary;
+		}
 	}
 }
 
