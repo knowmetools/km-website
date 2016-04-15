@@ -29,6 +29,29 @@ footer {
 	font-size: .9em;
 }
 
+.app-showcase {
+	font-size: 125%;
+
+	h3, p {
+		text-align: center;
+	}
+
+	.feature {
+		margin: 5em 0;
+		height: 50vh;
+		max-height: 50vh;
+
+		img {
+			max-height: 50vh;
+			width: auto;
+		}
+	}
+
+	.feature-description {
+		margin-top: 2em;
+	}
+}
+
 .center-blurb {
 	margin: 2em 0;
 	font-weight: bold;
@@ -154,6 +177,16 @@ a.faq-topic {
 	margin-bottom: 1em;
 }
 
+.underline {
+	margin-bottom: .25em;
+}
+
+.underline-primary {
+	@extend .underline;
+
+	border-bottom: 2px solid $brand-primary;
+}
+
 /******************/
 /* Responsiveness */
 /******************/
@@ -170,5 +203,14 @@ a.faq-topic {
 		font-size: 2em;
 		background: none;
 		box-shadow: none;
+	}
+
+	.feature-description {
+		margin-top: 0;
+	}
+
+	.feature-flex {
+		display: flex;
+		align-items: center;
 	}
 }
