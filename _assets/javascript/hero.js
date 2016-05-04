@@ -28,6 +28,7 @@ var calcBackgrounds = function() {
 /* Set the background image for a specified element to the given url. */
 var setBackground = function($el, url) {
 	$el.css("background", "url('" + url + "') no-repeat center center");
+	$el.css("background-size", "cover");
 };
 
 // Determine the backgrounds on page load.
