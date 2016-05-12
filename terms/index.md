@@ -1,5 +1,6 @@
 ---
 title: Terms of Service
+layout: legal
 ---
 
 # Know Me, LLC Terms of Service
@@ -14,10 +15,10 @@ You are able to upload content to and create content within the Service. Your pe
 Post content that is abusive, threatening, obscene, defamatory, libelous, or racially, sexually, religiously, or otherwise objectionable or offensive;
 Use the Service for any unlawful purpose or for the promotion of illegal activities;
 Attempt to, or harass, abuse, or harm another person or group;
-Use another user’s account without permission;
+Use another user's account without permission;
 Provide false or inaccurate information when registering an account;
 Interfere or attempt to interfere with the proper functioning of the Service;
-Post or link to malicious content intended to damage or disrupt another user’s hardware or software;
+Post or link to malicious content intended to damage or disrupt another user's hardware or software;
 Post or link to content that is copyrighted or subject to third party proprietary rights, including privacy, publicity, trade secret, etc., unless you are the owner of such rights or have the appropriate permission from their rightful owner to specifically submit such content.
 
 **2. User Agreements**
