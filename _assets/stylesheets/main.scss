@@ -136,6 +136,16 @@ a.faq-topic {
 	}
 }
 
+.invite-steps {
+  .invite-step {
+    margin-top: 3em;
+
+    h3 {
+      @extend .underline-primary;
+    }
+  }
+}
+
 .payment-option {
 	margin: 2em 0;
 
@@ -181,12 +191,12 @@ a.faq-topic {
 	margin-bottom: 1em;
 }
 
-.underline {
-	margin-bottom: .25em;
+%underline {
+	padding-bottom: .25em;
 }
 
 .underline-primary {
-	@extend .underline;
+	@extend %underline;
 
 	border-bottom: 2px solid $brand-primary;
 }
