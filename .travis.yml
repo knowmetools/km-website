@@ -9,9 +9,23 @@ cache: bundler
 env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+    - secure: "R4VJqTZPAxvpCNwPkr7XfeHZFPGnRsSTuD4FbMKPZHprjrMY8MyFy7ZTZv5hrL15u79fXflgO0ZV0CkgWbnasoubHTksCJmrwM3pO6topxJ5Wq5JAuenCPMMcaYOXk4RxO2Uv+q5eZ9j8KVefudGuPedK+pj+FitINU2LfEIG0gmKkVcp1FSoXvuJepkBbJQhnL0oUOZQEh/N/3mecI3nGEw3SnGZXCURZ4K/hTadCPYA93cO6nNOrj8DsBdgtWTSZYJHPZ58QEJ/UgqnO+9Dcw/8LQs49PLSxSJgt/RoxmMazHlTTByqDz9Mjl5wV8cp8xlAZK7Lr3NI6hps2+5kjNw2Z62dD8rp8ZSzc1UHuUeczSnMDtU0USoPWV+jo7ayzFhI4W6/3oWP6Sgqa5cn+7m+/raeFxX1R7NKFt0bPEJCvXF1RCEzMdmGjGtizUV7d/ZGvsvW+V/mCgky1P2VbFmB+FJdrf2K3dasX8AG/Q9pS1W6OB/h+IL4l+tr1GXRoaQfvC3YuRXAqrt7zjjof5PkDneZgPjK+1j43BAMR7rpeCS8LE8lANWM1R4ZJnNl0QWAeF1dqARJcZ8avMcksixwqsHr55EM5tVrPzbhKcC0vkPKK0sdSywVggwRjplk/M3OQRCvFeIKWjdBGBbqGU1Q3OjJsIydEGvDRxxgRM="
+    - secure: "Ba9HIHwuyPd843QL4mzdBc+ZC9JzrCYvMg4sCq9o//k7LzSVvgT+3pffetFTm/hJJb7S0S2K6EkG1b0Et/yWdSkc72p8tAwpmW3+0u/ZOpoSHlomZLFZF5mOrpzX7cF2jsuPioI5VhWZVodekyjbrRYZOTdl8KggtPmT3moJiTzjgX40xtM0j040B14VYyuLjtW9k8qwhcnmkjtz1/kVWzL/nYmTLdFLPd+1MQFN6IBXqWxtBhyTw0iJvxvb/WlAkVp08KlWTDzdUeEIWlIkdJXNs6ZACiH50nyVucoPSAF5HSkuGXpvRtblj9C+r/pkHj5Ujjj6UtlfDR/xq0xYMbNNxx85Yp+6ENdBW8H466WEnS+hUWOg0EV96oHALOIPmwi/ARs/H9/L5AS8hcQPv542gusb7SQG/I9QrfqkawXF6XwgNBYJgK0m+bjC5+wyqsZsilmRCwMtr+//T8+uVnl9/emg1ikP4qfIChC2l94N/vDZpy/H5O8L5PVUmjM6ygFhAFdRKkGELjs127JYOJL1EqUgJVbQ3jDu68gX/SDsGCLfOSS+875hmnPGiYBtR4scnPPexPTbuDHcSVS52hYCipvTBfPptG2mQXkn94VmftNybEzRSrxBbU66Z0N85pTSFHmNs0DfJwF1ICl0D8x95Ej0DfiXjcCqQE/9lFw="
 
 install:
   - bundle install
 
 script:
   - scripts/cibuild
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: dev.knowmetools.com
+    region: us-east-1
+    skip_cleanup: true
+    local_dir: _site
+    on:
+      repo: knowmetools/km-website
+      branch: development
