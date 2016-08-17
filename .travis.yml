@@ -14,4 +14,4 @@ install:
   - bundle install
 
 script:
-  - ./script/cibuild
+  - scripts/cibuild
