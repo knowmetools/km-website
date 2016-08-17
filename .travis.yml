@@ -4,6 +4,8 @@ language: ruby
 rvm:
   - 2.2
 
+cache: bundler
+
 env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
