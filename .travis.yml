@@ -29,3 +29,13 @@ deploy:
     on:
       repo: knowmetools/km-website
       branch: development
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: knowmetools.com
+    region: us-east-1
+    skip_cleanup: true
+    local_dir: _site
+    on:
+      repo: knowmetools/km-website
+      branch: master
