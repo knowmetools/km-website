@@ -1,4 +1,5 @@
 #! /bin/bash
 
 bundle exec jekyll build
-bundle exec htmlproofer --allow-hash-href --check-favicon --check-html ./_site
+bundle exec htmlproofer --allow-hash-href --check-favicon --check-html \
+    --report-missing-names --report-script-embeds ./_site
