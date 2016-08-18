@@ -1,4 +1,4 @@
 #! /bin/bash
 
 bundle exec jekyll build
-bundle exec htmlproofer --allow-hash-href --disable-external ./_site
+bundle exec htmlproofer --allow-hash-href --check-favicon --disable-external ./_site
