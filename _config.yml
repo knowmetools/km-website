@@ -10,6 +10,7 @@ url: "http://knowmetools.com"
 exclude:
   - Gemfile
   - Gemfile.lock
+  - "*.sublime-*"
 
 markdown: kramdown
 

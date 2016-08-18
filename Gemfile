@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 
 gem 'jekyll'
 
-# jekyll-assets plugin
+# jekyll plugins
 gem 'jekyll-assets'
-
 gem 'jekyll-sitemap'
+
+# used for testing
+gem 'html-proofer'
