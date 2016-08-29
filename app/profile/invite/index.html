@@ -3,35 +3,60 @@ title: Know Me Invite
 layout: page
 ---
 <div class='row'>
-  <div class='col-md-8 col-md-offset-2'>
-    <h1 class='text-center'>You Have Been Invited to a Profile</h1>
+  <div class='col-md-6 col-md-offset-3'>
+    <h1 class='text-center'>You Have Been Invited to a Know Me Profile</h1>
 
-    <section class='row invite-steps'>
-      <div class='col-lg-4 invite-step'>
-        <h3>Came Here from Gmail?</h3>
+    <section class='invite-steps'>
+      <div class='invite-step'>
+        <h2>Accepting the Invite</h2>
         <p>
-          If you came here from the Gmail app on your iOS device and you already have the app, please use the "Open in Safari" button at the bottom right of your screen to open the link emailed to you.
-        </p>
-        <img class='img-fluid' src='{% asset_path "gmail_external.png" %}' alt="Open in Safari" />
-      </div>
-      <div class='col-lg-4 invite-step'>
-        <h3>On an Android Device?</h3>
-        <p>
-          Unfortunately we don't yet have an Android version yet, but it's in the works! In the meantime, accept this invite on your iOS device.
+          To accept this invite, open the link you received in <strong>Safari on
+          your iOS device</strong>.
         </p>
       </div>
-      <div class='col-lg-4 invite-step'>
-        <h3>Don't Have the App?</h3>
+
+      <div class='invite-step'>
+        <h2>Don't Have the App?</h2>
         <p>
-          If you don't have the app yet, just click the link below and you'll be taken to its page on the App Store.
+          If you don't have the app yet, just click the link below and you'll be
+          taken to its page in the App Store.
         </p>
-        {% include app-store-badge.html url="https://itunes.apple.com/us/app/know-me-profile-communication/id1051805757?ls=1&mt=8" %}
+        <p>
+          Once you've downloaded the app and created your account, click on the
+          invitation link in the email you received and you'll be taken to the
+          app.
+        </p>
+
+        <div class='text-center'>
+          {% include app-store-badge.html url="https://itunes.apple.com/us/app/know-me-profile-communication/id1051805757?ls=1&mt=8" %}
+        </div>
+      </div>
+
+      <div class='invite-step'>
+        <h2>Came From Your Email App?</h2>
+        <p>
+          Some email apps have their own integrated web browser. Unfortunately
+          the process to accept the invitation only works in Safari. To resolve
+          this, open the link you received in Safari by tapping the &ldquo;Open
+          in Safari&rdquo; button. In the Gmail app, the button looks like this:
+        </p>
+
+        <img src='{% asset_path "external_link.png" %}' alt='External Link' />
+      </div>
+
+      <div class='invite-step'>
+        <h2>On an Android Device?</h2>
+        <p>
+          We don't yet have a version of the app for Android devices, but we're
+          working on it. In the meantime, accept this invite on your iPhone or
+          iPad.
+        </p>
       </div>
     </section>
 
-    <section class='row'>
-      <div class='col-md-8 col-md-offset-2'>
-        <h3 class='underline-primary'>Other Issues?</h3>
+    <section class='invite-steps'>
+      <div class='invite-step'>
+        <h2 class='underline-primary'>Other Issues?</h2>
         <p>
           If you are having issues with accepting an invitation to someone's profile, don't hesitate to contact us.
         </p>
