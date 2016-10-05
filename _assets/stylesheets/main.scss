@@ -138,9 +138,10 @@ a.faq-topic {
 
 .invite-steps {
   .invite-step {
+  	font-size: 1.25em;
     margin-top: 3em;
 
-    h3 {
+    h2 {
       @extend .underline-primary;
     }
   }
