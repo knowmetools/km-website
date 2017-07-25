@@ -3,10 +3,10 @@ title: Terms of Service
 layout: legal
 ---
 
-# Know Me, LLC Terms of Service
+# Know Me Inc Terms of Service
 Last updated April 27, 2016
 
-Your access to and use of products, including apps (the "Service") provided by Know Me, LLC ("us", "we", or "our") is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service. By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.
+Your access to and use of products, including apps (the "Service") provided by Know Me Inc ("us", "we", or "our") is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service. By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.
 
 **1. Use and Conduct Restrictions**
 
